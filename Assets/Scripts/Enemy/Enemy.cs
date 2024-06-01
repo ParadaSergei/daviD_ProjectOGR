@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+    public Slider healthSlider;
+
     private Animator animator;
 
     [SerializeField] private AudioSource dieEnemyAudio;
@@ -16,6 +19,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamade(int damage)
     {
         currentHealth -= damage;
+        healthSlider.value = currentHealth;
         if (currentHealth <= 0)
         {
             Die();

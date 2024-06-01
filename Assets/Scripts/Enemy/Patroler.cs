@@ -15,11 +15,14 @@ public class Patroler : MonoBehaviour
     public Transform player;
     public float stoppingDistance;
 
+    public Animator animatok;
+
     [SerializeField] private AudioSource attackEnemyAudio;
 
 
     void Start()
     {
+        animatok = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
